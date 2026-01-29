@@ -49,6 +49,7 @@ function App() {
           <Route path="/configuracoes" element={<PrivateRoute><Configuracoes /></PrivateRoute>} />
         </Routes>
         <Toaster position="top-right" />
+        <PWAInstallPrompt />
       </BrowserRouter>
     </AuthProvider>
   );

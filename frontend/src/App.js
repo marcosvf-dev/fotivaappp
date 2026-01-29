@@ -13,6 +13,7 @@ import Eventos from '@/pages/Eventos';
 import Pagamentos from '@/pages/Pagamentos';
 import Galeria from '@/pages/Galeria';
 import Configuracoes from '@/pages/Configuracoes';
+import NovoCliente from '@/pages/NovoCliente';
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();

@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "name": "FOTIVA",
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a top 1% SaaS platform for photographers that blends the precision of Linear with the elegance of Stripe.",
+    "tone": "Professional, Minimalist, Trustworthy, Efficient",
+    "target_audience": "Brazilian Professional Photographers"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Work Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "sizes": {
+      "h1": "text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold",
+      "h2": "text-3xl md:text-4xl tracking-tight font-medium",
+      "h3": "text-2xl md:text-3xl font-medium",
+      "body_lg": "text-lg leading-relaxed",
+      "body_base": "text-base leading-relaxed",
+      "body_sm": "text-sm leading-normal",
+      "caption": "text-xs text-muted-foreground uppercase tracking-wider"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#4A9B6E",
+        "foreground": "#FFFFFF",
+        "hover": "#3D8B5E",
+        "light": "#E8F5E9"
+      },
+      "secondary": {
+        "DEFAULT": "#F4C542",
+        "foreground": "#1A1A1A",
+        "hover": "#E0B135",
+        "light": "#FFF8E1"
+      },
+      "sidebar": {
+        "DEFAULT": "#2C3E50",
+        "foreground": "#FFFFFF",
+        "hover": "#34495E",
+        "active": "#3E5871",
+        "border": "#34495E"
+      },
+      "background": {
+        "DEFAULT": "#F8F9FA",
+        "paper": "#FFFFFF",
+        "subtle": "#F3F4F6"
+      },
+      "text": {
+        "primary": "#111827",
+        "secondary": "#6B7280",
+        "muted": "#9CA3AF"
+      },
+      "status": {
+        "success": "#4A9B6E",
+        "warning": "#F4C542",
+        "error": "#EF4444",
+        "info": "#3B82F6"
+      }
+    },
+    "usage_rules": {
+      "sidebar": "Must use #2C3E50 background. Text must be white/light gray.",
+      "actions": "Primary actions use Green (#4A9B6E). Secondary actions use outline or ghost styles.",
+      "gradients": "FORBIDDEN on buttons. Allowed subtly on hero backgrounds only.",
+      "contrast": "Ensure WCAG AA compliance. Use dark text on light backgrounds, white text on dark backgrounds."
+    }
+  },
+  "layout": {
+    "grid_system": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-6",
+      "landing_hero": "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center",
+      "gallery": "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-12",
+      "section_gap": "gap-8 md:gap-12",
+      "card_padding": "p-6"
+    },
+    "containers": {
+      "main": "max-w-7xl mx-auto",
+      "dashboard_content": "flex-1 overflow-y-auto bg-[#F8F9FA] p-6 md:p-8"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#4A9B6E] text-white hover:bg-[#3D8B5E] rounded-lg px-6 py-2.5 font-medium transition-all shadow-sm hover:shadow-md active:scale-95",
+      "secondary": "bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 rounded-lg px-6 py-2.5 font-medium transition-all",
+      "ghost": "text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg px-4 py-2 transition-colors"
+    },
+    "cards": {
+      "dashboard": "bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6",
+      "feature": "bg-white rounded-2xl border border-gray-100 p-8 hover:border-[#4A9B6E]/20 transition-colors"
+    },
+    "inputs": {
+      "default": "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4A9B6E] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    },
+    "sidebar": {
+      "container": "w-64 bg-[#2C3E50] text-white h-screen fixed left-0 top-0 flex flex-col border-r border-[#34495E]",
+      "link": "flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-[#34495E] rounded-lg transition-colors mx-2",
+      "active_link": "bg-[#4A9B6E] text-white shadow-md"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "soft": "0 2px 4px rgba(0,0,0,0.02), 0 4px 8px rgba(0,0,0,0.02)",
+      "medium": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "hover": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+    },
+    "borders": {
+      "subtle": "border border-gray-100",
+      "default": "border border-gray-200",
+      "active": "border border-[#4A9B6E]"
+    },
+    "radius": {
+      "default": "rounded-lg",
+      "card": "rounded-xl",
+      "pill": "rounded-full"
+    }
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1761426952799-108385c4753d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoZXIlMjB3b3JraW5nJTIwY2FtZXJhfGVufDB8fHx8MTc2OTcyNTczNXww&ixlib=rb-4.1.0&q=85",
+      "alt": "Professional photographer working",
+      "category": "landing_page"
+    },
+    "photographer_profile": {
+      "url": "https://images.unsplash.com/photo-1603207757545-de4fffdb404c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoZXIlMjB3b3JraW5nJTIwY2FtZXJhfGVufDB8fHx8MTc2OTcyNTczNXww&ixlib=rb-4.1.0&q=85",
+      "alt": "Photographer profile picture",
+      "category": "dashboard_profile"
+    },
+    "gallery_samples": [
+      {
+        "url": "https://images.unsplash.com/photo-1765292783735-9ec7213b1df1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBldmVudCUyMGhhcHB5JTIwY291cGxlfGVufDB8fHx8MTc2OTcyNTczOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Wedding couple by car",
+        "category": "gallery_thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1758810413611-a318fcd14873?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBldmVudCUyMGhhcHB5JTIwY291cGxlfGVufDB8fHx8MTc2OTcyNTczOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Wedding confetti",
+        "category": "gallery_thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1686129613717-64df933aa48f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBldmVudCUyMGhhcHB5JTIwY291cGxlfGVufDB8fHx8MTc2OTcyNTczOHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Happy couple outdoor",
+        "category": "gallery_thumbnail"
+      }
+    ],
+    "abstract_bg": {
+      "url": "https://images.unsplash.com/photo-1583678265244-52071ad05314?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwYWJzdHJhY3QlMjBwaG90b2dyYXBoeSUyMHBvcnRmb2xpbyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY5NzI1NzM5fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Minimalist concrete texture",
+      "category": "background_texture"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": "You are building a high-end SaaS for photographers. The design must be impeccable. Do not cut corners on spacing or typography.",
+    "sidebar_implementation": "The sidebar is fixed. Ensure the main content has 'ml-64' (margin-left) to avoid overlap on desktop. On mobile, use a sheet/drawer.",
+    "charts": "Use Recharts. Style them to be minimal. Remove grid lines if possible, or make them very subtle (#E5E7EB). Use the primary green for the main data series.",
+    "tables": "Use Shadcn Table component. Style headers with uppercase, smaller font, and muted text. Rows should have hover effects.",
+    "forms": "Use React Hook Form + Zod. Validation messages should be clear and red. Success states should be green.",
+    "animations": "Use Framer Motion for page transitions (opacity/y-axis slide). Use 'AnimatePresence' for list items (events, payments).",
+    "mock_data": "Generate realistic mock data for the dashboard (Brazilian names, R$ currency, realistic dates).",
+    "testing": "Add 'data-testid' to all interactive elements (buttons, inputs, links, cards)."
+  },
+  "universal_guidelines": {
+    "anti_slop": "Avoid generic centered layouts. Use asymmetry. Use whitespace aggressively.",
+    "dark_mode": "The sidebar is always dark. The main content is light. Do not implement a global dark mode toggle unless specifically asked, as the brand identity relies on this contrast.",
+    "micro_interactions": "Buttons should scale down slightly on click. Links should have a subtle underline animation.",
+    "glassmorphism": "Use sparingly. Only for floating elements like a sticky header or a toast notification."
+  }
+}

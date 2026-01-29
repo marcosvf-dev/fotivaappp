@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ResponsiveDashboardLayout from '@/components/ResponsiveResponsiveDashboardLayout';
+import ResponsiveDashboardLayout from '@/components/ResponsiveDashboardLayout';
 import axios from 'axios';
 import { Plus, Image as ImageIcon } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';

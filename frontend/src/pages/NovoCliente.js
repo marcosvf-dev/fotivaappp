@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ResponsiveDashboardLayout from '@/components/ResponsiveResponsiveDashboardLayout';
+import ResponsiveDashboardLayout from '@/components/ResponsiveDashboardLayout';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { ArrowLeft } from 'lucide-react';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ResponsiveDashboardLayout from '@/components/ResponsiveResponsiveDashboardLayout';
+import ResponsiveDashboardLayout from '@/components/ResponsiveDashboardLayout';
 import { useAuth } from '@/contexts/AuthContext';
 import { Camera } from 'lucide-react';
 import { toast } from 'sonner';

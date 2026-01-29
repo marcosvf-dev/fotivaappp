@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ResponsiveDashboardLayout from '@/components/ResponsiveResponsiveDashboardLayout';
+import ResponsiveDashboardLayout from '@/components/ResponsiveDashboardLayout';
 import axios from 'axios';
 import { TrendingUp, Calendar, Image, DollarSign } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';

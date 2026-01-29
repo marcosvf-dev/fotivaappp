@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DashboardLayout from '@/components/DashboardLayout';
+import ResponsiveDashboardLayout from '@/components/ResponsiveResponsiveDashboardLayout';
 import axios from 'axios';
 import { TrendingUp, Calendar, Image, DollarSign } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
@@ -27,14 +27,14 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <DashboardLayout>
+      <ResponsiveDashboardLayout>
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#4A9B6E] border-r-transparent"></div>
             <p className="mt-4 text-gray-600">Carregando métricas...</p>
           </div>
         </div>
-      </DashboardLayout>
+      </ResponsiveDashboardLayout>
     );
   }
 
@@ -74,7 +74,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <DashboardLayout>
+    <ResponsiveDashboardLayout>
       <div className="space-y-8">
         <div>
           <h1 className="text-3xl font-semibold text-[#111827]" style={{ fontFamily: 'Work Sans, sans-serif' }}>
@@ -202,7 +202,7 @@ const Dashboard = () => {
           )}
         </div>
       </div>
-    </DashboardLayout>
+    </ResponsiveDashboardLayout>
   );
 };
 

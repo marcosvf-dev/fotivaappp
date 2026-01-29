@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DashboardLayout from '@/components/DashboardLayout';
+import ResponsiveDashboardLayout from '@/components/ResponsiveResponsiveDashboardLayout';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { ArrowLeft } from 'lucide-react';
@@ -32,7 +32,7 @@ const NovoCliente = () => {
   };
 
   return (
-    <DashboardLayout>
+    <ResponsiveDashboardLayout>
       <div className="max-w-2xl">
         <button
           onClick={() => navigate(-1)}
@@ -114,7 +114,7 @@ const NovoCliente = () => {
           </form>
         </div>
       </div>
-    </DashboardLayout>
+    </ResponsiveDashboardLayout>
   );
 };
 

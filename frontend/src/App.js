@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
 import '@/App.css';
 import { AuthProvider, useAuth } from '@/contexts/AuthContext';
+import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 
 // Pages
 import LandingPage from '@/pages/LandingPage';

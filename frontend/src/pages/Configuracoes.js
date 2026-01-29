@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ResponsiveDashboardLayout from '@/components/ResponsiveDashboardLayout';
+import DashboardLayout from '@/components/DashboardLayout';
 import { useAuth } from '@/contexts/AuthContext';
 import { Camera } from 'lucide-react';
 import { toast } from 'sonner';
@@ -20,7 +20,7 @@ const Configuracoes = () => {
   };
 
   return (
-    <ResponsiveDashboardLayout>
+    <DashboardLayout>
       <div className="space-y-8 max-w-2xl">
         <div>
           <h1 className="text-3xl font-semibold text-[#111827]" style={{ fontFamily: 'Work Sans, sans-serif' }}>
@@ -121,7 +121,7 @@ const Configuracoes = () => {
           </div>
         </div>
       </div>
-    </ResponsiveDashboardLayout>
+    </DashboardLayout>
   );
 };
 

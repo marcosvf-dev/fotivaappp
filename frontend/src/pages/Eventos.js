@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ResponsiveDashboardLayout from '@/components/ResponsiveDashboardLayout';
+import DashboardLayout from '@/components/DashboardLayout';
 import axios from 'axios';
 import { Plus, Calendar, MapPin, Clock, Phone, DollarSign } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -81,19 +81,19 @@ const Eventos = () => {
 
   if (loading) {
     return (
-      <ResponsiveDashboardLayout>
+      <DashboardLayout>
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#4A9B6E] border-r-transparent"></div>
             <p className="mt-4 text-gray-600">Carregando eventos...</p>
           </div>
         </div>
-      </ResponsiveDashboardLayout>
+      </DashboardLayout>
     );
   }
 
   return (
-    <ResponsiveDashboardLayout>
+    <DashboardLayout>
       <div className="space-y-8">
         <div className="flex items-center justify-between">
           <div>
@@ -272,7 +272,7 @@ const Eventos = () => {
           </div>
         )}
       </div>
-    </ResponsiveDashboardLayout>
+    </DashboardLayout>
   );
 };
 

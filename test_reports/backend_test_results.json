@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-01-29T22:49:31.942694",
+  "summary": {
+    "tests_run": 14,
+    "tests_passed": 14,
+    "success_rate": 100.0
+  },
+  "results": [
+    {
+      "test_name": "API Health Check",
+      "success": true,
+      "details": "Message: FOTIVA API est\u00e1 funcionando!",
+      "response_data": null
+    },
+    {
+      "test_name": "User Registration",
+      "success": true,
+      "details": "User created: Test Photographer",
+      "response_data": null
+    },
+    {
+      "test_name": "Get Current User",
+      "success": true,
+      "details": "User info retrieved: Test Photographer",
+      "response_data": null
+    },
+    {
+      "test_name": "Create Client",
+      "success": true,
+      "details": "Client created: Jo\u00e3o Silva",
+      "response_data": null
+    },
+    {
+      "test_name": "Get Clients",
+      "success": true,
+      "details": "Retrieved 1 clients",
+      "response_data": null
+    },
+    {
+      "test_name": "Create Event",
+      "success": true,
+      "details": "Event created: Casamento Jo\u00e3o & Maria",
+      "response_data": null
+    },
+    {
+      "test_name": "Get Events",
+      "success": true,
+      "details": "Retrieved 1 events",
+      "response_data": null
+    },
+    {
+      "test_name": "Get Single Event",
+      "success": true,
+      "details": "Event retrieved: Casamento Jo\u00e3o & Maria",
+      "response_data": null
+    },
+    {
+      "test_name": "Create Payment",
+      "success": true,
+      "details": "Payment created: R$ 1666.67",
+      "response_data": null
+    },
+    {
+      "test_name": "Get Payments",
+      "success": true,
+      "details": "Retrieved 1 payments",
+      "response_data": null
+    },
+    {
+      "test_name": "Mark Payment Paid",
+      "success": true,
+      "details": "Pagamento marcado como pago",
+      "response_data": null
+    },
+    {
+      "test_name": "Create Gallery",
+      "success": true,
+      "details": "Gallery created: Fotos do Casamento Jo\u00e3o & Maria",
+      "response_data": null
+    },
+    {
+      "test_name": "Get Galleries",
+      "success": true,
+      "details": "Retrieved 1 galleries",
+      "response_data": null
+    },
+    {
+      "test_name": "Dashboard Metrics",
+      "success": true,
+      "details": "Metrics retrieved: {'monthly_revenue': 1666.67, 'confirmed_events': 1, 'photos_delivered': 0, 'pending_payments': 0.0}",
+      "response_data": null
+    }
+  ]
+}

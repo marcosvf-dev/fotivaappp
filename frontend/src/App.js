@@ -42,6 +42,7 @@ function App() {
           <Route path="/cadastro" element={<Register />} />
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
           <Route path="/eventos" element={<PrivateRoute><Eventos /></PrivateRoute>} />
+          <Route path="/clientes/novo" element={<PrivateRoute><NovoCliente /></PrivateRoute>} />
           <Route path="/pagamentos" element={<PrivateRoute><Pagamentos /></PrivateRoute>} />
           <Route path="/galeria" element={<PrivateRoute><Galeria /></PrivateRoute>} />
           <Route path="/configuracoes" element={<PrivateRoute><Configuracoes /></PrivateRoute>} />

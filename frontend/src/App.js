@@ -49,7 +49,8 @@ function App() {
           <Route path="/configuracoes" element={<PrivateRoute><Configuracoes /></PrivateRoute>} />
         </Routes>
         <Toaster position="top-right" />
-        <PWAInstallPrompt />
+        {/* PWA Install Prompt - desabilitado temporariamente para debug */}
+        {/* <PWAInstallPrompt /> */}
       </BrowserRouter>
     </AuthProvider>
   );

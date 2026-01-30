@@ -16,7 +16,7 @@ Progressive Web App (PWA) é uma tecnologia que permite que sites funcionem como
 ## 📲 Como Instalar no Android
 
 ### Método 1: Chrome/Edge
-1. Abra o FOTIVA no Chrome: `https://fotiva-dash.preview.emergentagent.com`
+1. Abra o FOTIVA no Chrome: `https://tailwind-fix-3.preview.emergentagent.com`
 2. Toque no menu (⋮) no canto superior direito
 3. Selecione **"Adicionar à tela inicial"** ou **"Instalar app"**
 4. Confirme tocando em **"Instalar"**
@@ -33,7 +33,7 @@ Progressive Web App (PWA) é uma tecnologia que permite que sites funcionem como
 ## 🍎 Como Instalar no iPhone/iPad
 
 ### Safari (único navegador com suporte PWA no iOS)
-1. Abra o FOTIVA no Safari: `https://fotiva-dash.preview.emergentagent.com`
+1. Abra o FOTIVA no Safari: `https://tailwind-fix-3.preview.emergentagent.com`
 2. Toque no botão **Compartilhar** (quadrado com seta para cima)
 3. Role e selecione **"Adicionar à Tela de Início"**
 4. Edite o nome se desejar: "FOTIVA"

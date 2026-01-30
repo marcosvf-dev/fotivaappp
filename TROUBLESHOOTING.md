@@ -44,7 +44,7 @@ F12 → Network → "Disable cache" ✓
 
 **Verificar:**
 ```bash
-curl -I https://fotiva-dash.preview.emergentagent.com
+curl -I https://tailwind-fix-3.preview.emergentagent.com
 ```
 
 Procure por:
@@ -87,7 +87,7 @@ webpack compiled successfully
 
 **Verificar em /app/frontend/.env:**
 ```env
-REACT_APP_BACKEND_URL=https://fotiva-dash.preview.emergentagent.com
+REACT_APP_BACKEND_URL=https://tailwind-fix-3.preview.emergentagent.com
 ```
 
 **NÃO deve ter:**
@@ -171,7 +171,7 @@ du -sh build/
 
 ### Testar API isoladamente:
 ```bash
-API_URL="https://fotiva-dash.preview.emergentagent.com"
+API_URL="https://tailwind-fix-3.preview.emergentagent.com"
 curl -s "$API_URL/api/" | jq
 ```
 

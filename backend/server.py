@@ -325,11 +325,11 @@ async def mark_payment_paid(payment_id: str, current_user: User = Depends(get_cu
         raise HTTPException(status_code=404, detail="Pagamento não encontrado")
     
     # Update event paid_amount
-    payment_doc = await db.payments.find_one({"id": payment_id}, {"_id": 0})
+    payment_doc = await db.payments.find_one({"id": payment_id}, {"_id": 0, "event_id": 1})
     if payment_doc:
         event_id = payment_doc['event_id']
-        all_payments = await db.payments.find({"event_id": event_id}, {"_id": 0}).to_list(1000)
-        total_paid = sum(p['amount'] for p in all_payments if p['paid'])
+        all_payments = await db.payments.find({"event_id": event_id}, {"_id": 0, "amount": 1, "paid": 1}).to_list(1000)
+        total_paid = sum(p['amount'] for p in all_payments if p.get('paid', False))
         await db.events.update_one({"id": event_id}, {"$set": {"paid_amount": total_paid}})
     
     return {"message": "Pagamento marcado como pago"}

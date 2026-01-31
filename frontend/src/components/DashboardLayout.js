@@ -1,15 +1,21 @@
 import React from 'react';
 import Sidebar from './Sidebar';
+import VoiceChatbot from './VoiceChatbot';
 
 const DashboardLayout = ({ children }) => {
   return (
-    <div className="flex min-h-screen bg-[#F8F9FA]">
+    <div className="flex h-screen bg-gray-50">
       <Sidebar />
-      <div className="ml-64 flex-1">
-        <main className="p-6 md:p-8">
+      
+      {/* Main Content */}
+      <div className="flex-1 lg:ml-64 overflow-y-auto">
+        <div className="p-4 lg:p-8 pt-16 lg:pt-8">
           {children}
-        </main>
+        </div>
       </div>
+
+      {/* Voice Chatbot */}
+      <VoiceChatbot />
     </div>
   );
 };

@@ -11,8 +11,10 @@ import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import Dashboard from '@/pages/Dashboard';
 import Eventos from '@/pages/Eventos';
-import Clientes from '@/pages/Clientes';        // ← NOVA LINHA
-import NovoCliente from '@/pages/NovoCliente';  // ← NOVA LINHA
+import NovoEvento from '@/pages/NovoEvento';
+import EditarEvento from '@/pages/EditarEvento';
+import Clientes from '@/pages/Clientes';
+import NovoCliente from '@/pages/NovoCliente';
 import Pagamentos from '@/pages/Pagamentos';
 import Galeria from '@/pages/Galeria';
 import Configuracoes from '@/pages/Configuracoes';
@@ -38,21 +40,32 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-<Routes>
-  <Route path="/" element={<LandingPage />} />
-  <Route path="/login" element={<Login />} />
-  <Route path="/cadastro" element={<Register />} />
-  <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-  <Route path="/eventos" element={<PrivateRoute><Eventos /></PrivateRoute>} />
-  <Route path="/clientes" element={<PrivateRoute><Clientes /></PrivateRoute>} />           {/* ← NOVA LINHA */}
-  <Route path="/clientes/novo" element={<PrivateRoute><NovoCliente /></PrivateRoute>} />   {/* ← NOVA LINHA */}
-  <Route path="/pagamentos" element={<PrivateRoute><Pagamentos /></PrivateRoute>} />
-  <Route path="/galeria" element={<PrivateRoute><Galeria /></PrivateRoute>} />
-  <Route path="/configuracoes" element={<PrivateRoute><Configuracoes /></PrivateRoute>} />
-</Routes>
+        <Routes>
+          {/* Rotas Públicas */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Register />} />
+          
+          {/* Rotas Privadas - Dashboard */}
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          
+          {/* Rotas Privadas - Eventos */}
+          <Route path="/eventos" element={<PrivateRoute><Eventos /></PrivateRoute>} />
+          <Route path="/eventos/novo" element={<PrivateRoute><NovoEvento /></PrivateRoute>} />
+          <Route path="/eventos/editar/:id" element={<PrivateRoute><EditarEvento /></PrivateRoute>} />
+          
+          {/* Rotas Privadas - Clientes */}
+          <Route path="/clientes" element={<PrivateRoute><Clientes /></PrivateRoute>} />
+          <Route path="/clientes/novo" element={<PrivateRoute><NovoCliente /></PrivateRoute>} />
+          
+          {/* Rotas Privadas - Outras */}
+          <Route path="/pagamentos" element={<PrivateRoute><Pagamentos /></PrivateRoute>} />
+          <Route path="/galeria" element={<PrivateRoute><Galeria /></PrivateRoute>} />
+          <Route path="/configuracoes" element={<PrivateRoute><Configuracoes /></PrivateRoute>} />
+        </Routes>
+        
         <Toaster position="top-right" />
-        {/* PWA Install Prompt - desabilitado temporariamente para debug */}
-        {/* <PWAInstallPrompt /> */}
+        <PWAInstallPrompt />
       </BrowserRouter>
     </AuthProvider>
   );

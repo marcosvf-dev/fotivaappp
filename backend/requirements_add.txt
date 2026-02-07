@@ -1,0 +1,10 @@
+# ============== ADICIONE NO SEU requirements.txt ==============
+# Copie estas 3 linhas e cole no final do arquivo requirements.txt
+
+twilio==8.10.0
+pywebpush==1.14.0
+httpx==0.25.2
+
+# ============== COMO INSTALAR ==============
+# Depois de adicionar, rode:
+# pip install twilio pywebpush httpx --break-system-packages

@@ -23,7 +23,13 @@ SECRET_KEY = os.environ['SECRET_KEY']
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto",
+    bcrypt__rounds=12,
+    bcrypt__ident="2b",
+    bcrypt__truncate_error=False  # Não lança erro, trunca automaticamente
+)
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 
 # MongoDB connection
@@ -207,23 +213,34 @@ class MercadoPagoWebhook(BaseModel):
 
 def verify_password(plain_password, hashed_password):
     """Verifica senha limitando a 72 bytes (limite do bcrypt)"""
-    # Bcrypt tem limite de 72 bytes
-    if len(plain_password.encode('utf-8')) > 72:
-        plain_password = plain_password[:72]
-    
     try:
+        # Bcrypt tem limite de 72 bytes - trunca corretamente em bytes, não em caracteres
+        password_bytes = plain_password.encode('utf-8')
+        if len(password_bytes) > 72:
+            # Trunca em 72 bytes e decodifica de volta
+            plain_password = password_bytes[:72].decode('utf-8', errors='ignore')
+        
         return pwd_context.verify(plain_password, hashed_password)
     except ValueError as e:
         print(f"❌ Erro ao verificar senha: {e}")
         return False
+    except Exception as e:
+        print(f"❌ Erro inesperado ao verificar senha: {e}")
+        return False
 
 def get_password_hash(password):
     """Cria hash da senha limitando a 72 bytes (limite do bcrypt)"""
-    # Bcrypt tem limite de 72 bytes
-    if len(password.encode('utf-8')) > 72:
-        password = password[:72]
-    
-    return pwd_context.hash(password)
+    try:
+        # Bcrypt tem limite de 72 bytes - trunca corretamente em bytes, não em caracteres
+        password_bytes = password.encode('utf-8')
+        if len(password_bytes) > 72:
+            # Trunca em 72 bytes e decodifica de volta
+            password = password_bytes[:72].decode('utf-8', errors='ignore')
+        
+        return pwd_context.hash(password)
+    except Exception as e:
+        print(f"❌ Erro ao criar hash de senha: {e}")
+        raise HTTPException(status_code=500, detail="Erro ao processar senha")
 
 def create_access_token(data: dict):
     to_encode = data.copy()

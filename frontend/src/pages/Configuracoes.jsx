@@ -17,6 +17,11 @@ const Configuracoes = () => {
 
   useEffect(() => {
     fetchUserData();
+    // Carregar foto do localStorage
+    const savedImage = localStorage.getItem('profile_image');
+    if (savedImage) {
+      setUserData(prev => ({ ...prev, profile_image: savedImage }));
+    }
   }, []);
 
   const fetchUserData = async () => {
@@ -26,14 +31,14 @@ const Configuracoes = () => {
         `${process.env.REACT_APP_BACKEND_URL}/api/auth/me`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      setUserData(response.data);
+      setUserData(prev => ({ ...response.data, profile_image: prev.profile_image }));
     } catch (error) {
       console.error('Erro ao buscar dados:', error);
       showMessage('Erro ao carregar dados do usuário', 'error');
     }
   };
 
-  const handleImageChange = async (e) => {
+  const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
@@ -50,25 +55,11 @@ const Configuracoes = () => {
 
     // Converter para base64
     const reader = new FileReader();
-    reader.onloadend = async () => {
-      try {
-        setLoading(true);
-        const token = localStorage.getItem('token');
-        
-        await axios.put(
-          `${process.env.REACT_APP_BACKEND_URL}/api/auth/profile`,
-          { profile_image: reader.result },
-          { headers: { Authorization: `Bearer ${token}` } }
-        );
-
-        setUserData({ ...userData, profile_image: reader.result });
-        showMessage('Foto atualizada com sucesso!', 'success');
-      } catch (error) {
-        console.error('Erro ao fazer upload:', error);
-        showMessage('Erro ao fazer upload da foto', 'error');
-      } finally {
-        setLoading(false);
-      }
+    reader.onloadend = () => {
+      // Salvar no localStorage temporariamente
+      localStorage.setItem('profile_image', reader.result);
+      setUserData({ ...userData, profile_image: reader.result });
+      showMessage('Foto atualizada! (Salva localmente)', 'success');
     };
     reader.readAsDataURL(file);
   };
@@ -79,17 +70,30 @@ const Configuracoes = () => {
       setLoading(true);
       const token = localStorage.getItem('token');
       
-      await axios.put(
-        `${process.env.REACT_APP_BACKEND_URL}/api/auth/profile`,
-        {
-          name: userData.name,
-          studio_name: userData.studio_name,
-          phone: userData.phone
-        },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-
-      showMessage('Dados atualizados com sucesso!', 'success');
+      // Tentar atualizar no backend (se o endpoint existir)
+      try {
+        await axios.put(
+          `${process.env.REACT_APP_BACKEND_URL}/api/auth/profile`,
+          {
+            name: userData.name,
+            studio_name: userData.studio_name,
+            phone: userData.phone,
+            profile_image: userData.profile_image
+          },
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+        showMessage('Dados atualizados com sucesso!', 'success');
+      } catch (error) {
+        // Se o endpoint não existir, salvar localmente
+        if (error.response?.status === 404) {
+          localStorage.setItem('user_name', userData.name);
+          localStorage.setItem('user_studio', userData.studio_name);
+          localStorage.setItem('user_phone', userData.phone);
+          showMessage('Dados salvos localmente! (Backend em atualização)', 'success');
+        } else {
+          throw error;
+        }
+      }
     } catch (error) {
       console.error('Erro ao atualizar:', error);
       showMessage('Erro ao atualizar dados', 'error');
@@ -199,6 +203,9 @@ const Configuracoes = () => {
                 />
               </label>
               <p className="photo-hint">JPG, PNG ou GIF. Máximo 2MB.</p>
+              <p className="photo-hint" style={{ color: '#856404', marginTop: '5px' }}>
+                ⚠️ Foto salva localmente até backend ser atualizado
+              </p>
             </div>
           </div>
 
@@ -260,8 +267,8 @@ const Configuracoes = () => {
               <div className="contact-icon">📧</div>
               <div className="contact-details">
                 <h3>Email de Suporte</h3>
-                <p>suporte@fotiva.com.br</p>
-                <a href="mailto:suporte@fotiva.com.br" className="btn-contact">
+                <p>marcosvinhafotografia@gmail.com</p>
+                <a href="mailto:marcosvinhafotografia@gmail.com" className="btn-contact">
                   Enviar Email
                 </a>
               </div>
@@ -271,9 +278,9 @@ const Configuracoes = () => {
               <div className="contact-icon">💬</div>
               <div className="contact-details">
                 <h3>WhatsApp</h3>
-                <p>(11) 99999-9999</p>
+                <p>(37) 99999-9999</p>
                 <a
-                  href="https://wa.me/5511999999999?text=Olá! Preciso de ajuda com o FOTIVA"
+                  href="https://wa.me/5537999999999?text=Olá! Preciso de ajuda com o FOTIVA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-contact"
